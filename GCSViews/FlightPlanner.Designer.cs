@@ -61,9 +61,9 @@ namespace MissionPlanner.GCSViews
             this.TXT_loiterrad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.but_writewpfast = new MissionPlanner.Controls.MyButton();
             this.BUT_write = new MissionPlanner.Controls.MyButton();
             this.BUT_read = new MissionPlanner.Controls.MyButton();
+            this.but_writewpfast = new MissionPlanner.Controls.MyButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -283,18 +283,10 @@ namespace MissionPlanner.GCSViews
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.but_writewpfast);
             this.panel5.Controls.Add(this.BUT_write);
             this.panel5.Controls.Add(this.BUT_read);
             resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
-            // 
-            // but_writewpfast
-            // 
-            resources.ApplyResources(this.but_writewpfast, "but_writewpfast");
-            this.but_writewpfast.Name = "but_writewpfast";
-            this.but_writewpfast.UseVisualStyleBackColor = true;
-            this.but_writewpfast.Click += new System.EventHandler(this.but_writewpfast_Click);
             // 
             // BUT_write
             // 
@@ -310,6 +302,13 @@ namespace MissionPlanner.GCSViews
             this.BUT_read.UseVisualStyleBackColor = true;
             this.BUT_read.Click += new System.EventHandler(this.BUT_read_Click);
             // 
+            // but_writewpfast
+            // 
+            resources.ApplyResources(this.but_writewpfast, "but_writewpfast");
+            this.but_writewpfast.Name = "but_writewpfast";
+            this.but_writewpfast.UseVisualStyleBackColor = true;
+            this.but_writewpfast.Click += new System.EventHandler(this.but_writewpfast_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
@@ -319,6 +318,7 @@ namespace MissionPlanner.GCSViews
             this.panel1.Controls.Add(this.TXT_homealt);
             this.panel1.Controls.Add(this.TXT_homelng);
             this.panel1.Controls.Add(this.TXT_homelat);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -405,6 +405,7 @@ namespace MissionPlanner.GCSViews
             // 
             // panelWaypoints
             // 
+            resources.ApplyResources(this.panelWaypoints, "panelWaypoints");
             this.panelWaypoints.Controls.Add(this.chk_usemavftp);
             this.panelWaypoints.Controls.Add(this.but_mincommands);
             this.panelWaypoints.Controls.Add(this.CMB_altmode);
@@ -420,7 +421,6 @@ namespace MissionPlanner.GCSViews
             this.panelWaypoints.Controls.Add(this.CHK_verifyheight);
             this.panelWaypoints.Controls.Add(this.TXT_WPRad);
             this.panelWaypoints.Controls.Add(this.BUT_Add);
-            resources.ApplyResources(this.panelWaypoints, "panelWaypoints");
             this.panelWaypoints.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelWaypoints.Name = "panelWaypoints";
             // 
@@ -464,8 +464,9 @@ namespace MissionPlanner.GCSViews
             // 
             // Commands
             // 
+            this.Commands.AllowDrop = true;
             this.Commands.AllowUserToAddRows = false;
-            resources.ApplyResources(this.Commands, "Commands");
+            this.Commands.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,6 +475,7 @@ namespace MissionPlanner.GCSViews
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Commands.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(this.Commands, "Commands");
             this.Commands.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Command,
             this.Param1,
@@ -523,6 +525,7 @@ namespace MissionPlanner.GCSViews
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             this.Command.DefaultCellStyle = dataGridViewCellStyle4;
             this.Command.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Command.FillWeight = 70F;
             resources.ApplyResources(this.Command, "Command");
             this.Command.Name = "Command";
             // 
@@ -659,6 +662,7 @@ namespace MissionPlanner.GCSViews
             // 
             // splitter1
             // 
+            this.splitter1.BackColor = System.Drawing.SystemColors.HotTrack;
             resources.ApplyResources(this.splitter1, "splitter1");
             this.splitter1.Name = "splitter1";
             this.splitter1.TabStop = false;
@@ -672,12 +676,13 @@ namespace MissionPlanner.GCSViews
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.but_writewpfast);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // panel4
@@ -753,6 +758,7 @@ namespace MissionPlanner.GCSViews
             // 
             // panelMap
             // 
+            resources.ApplyResources(this.panelMap, "panelMap");
             this.panelMap.Controls.Add(this.lbl_homedist);
             this.panelMap.Controls.Add(this.lbl_prevdist);
             this.panelMap.Controls.Add(this.trackBar1);
@@ -760,8 +766,7 @@ namespace MissionPlanner.GCSViews
             this.panelMap.Controls.Add(this.lbl_distance);
             this.panelMap.Controls.Add(this.cmb_missiontype);
             this.panelMap.Controls.Add(this.MainMap);
-            resources.ApplyResources(this.panelMap, "panelMap");
-            this.panelMap.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panelMap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelMap.Name = "panelMap";
             this.panelMap.Resize += new System.EventHandler(this.panelMap_Resize);
             // 
@@ -1393,12 +1398,14 @@ namespace MissionPlanner.GCSViews
             // 
             // panelBASE
             // 
+            this.panelBASE.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelBASE.Controls.Add(this.splitter2);
             this.panelBASE.Controls.Add(this.splitter1);
             this.panelBASE.Controls.Add(this.panelMap);
             this.panelBASE.Controls.Add(this.panelWaypoints);
             this.panelBASE.Controls.Add(this.panelAction);
             resources.ApplyResources(this.panelBASE, "panelBASE");
+            this.panelBASE.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.panelBASE.Name = "panelBASE";
             // 
             // timer1
@@ -1480,9 +1487,9 @@ namespace MissionPlanner.GCSViews
             // 
             // FlightPlanner
             // 
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.panelBASE);
             resources.ApplyResources(this, "$this");
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.panelBASE);
             this.Name = "FlightPlanner";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FlightPlanner_FormClosing);
             this.Load += new System.EventHandler(this.FlightPlanner_Load);
@@ -1494,6 +1501,7 @@ namespace MissionPlanner.GCSViews
             this.panelWaypoints.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).EndInit();
             this.panelAction.ResumeLayout(false);
+            this.panelAction.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1505,6 +1513,7 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panelBASE.ResumeLayout(false);
+            this.panelBASE.PerformLayout();
             this.contextMenuStripPoly.ResumeLayout(false);
             this.contextMenuStripZoom.ResumeLayout(false);
             this.ResumeLayout(false);
