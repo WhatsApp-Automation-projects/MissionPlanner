@@ -224,6 +224,14 @@ namespace MissionPlanner.Log
             if (logdata != null)
                 logdata.Clear();
 
+
+            //map
+            splitContainerZgMap.Panel2Collapsed = true;
+            //dg
+            splitContainerButGrid.Panel2Collapsed = true;
+
+            this.LogBrowse_Resize(this,null);
+
             GC.Collect();
 
             myGMAP1.DisableFocusOnMouseEnter = true;
@@ -1452,6 +1460,9 @@ main()
 
             // this is so precaned graphs draw on a singel axis
             if (isexpression)
+                unit = "";
+
+            if (unit == null)
                 unit = "";
 
             if (unit != "")
@@ -3513,9 +3524,8 @@ main()
 
                         dataGridView1.ColumnCount = colcount;
 
-                        int a = 0;
-                        while (a++ < 1000)
-                            dataGridView1.Rows.Add();
+                        if (dataGridView1.Rows.Count < 1000)
+                            dataGridView1.Rows.Add(1000 - dataGridView1.Rows.Count);
 
                         // populate first row
                         populateRowData(0, 0, 0);
